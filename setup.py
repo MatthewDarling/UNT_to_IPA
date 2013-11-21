@@ -5,7 +5,7 @@ import UNT_to_IPA
 setup(
     name='UNT_to_IPA',
     version=UNT_to_IPA.__version__,
-    #url= insert github link?
+    url="https://github.com/MatthewDarling/UNT_to_IPA/"
     py_modules=['UNT_to_IPA'],
     install_requires=['re_transliterate', 'basic_argparse'],
     include_package_data=True,
