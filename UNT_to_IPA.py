@@ -23,7 +23,7 @@ def init_forward_mappings():
     """Creates global regex mappings for use in UNT->IPA transliteration."""
     global re_trigraphs, re_bigraphs, re_monographs, re_special, re_asjp
     re_trigraphs = {u"lh’":u"ɬ’", #ejective lateral fricative
-                    VOWELS + u":'|':":ur"\g<1>" + LARYNGEAL + u"ː"}
+                    VOWELS + u"(:'|':)":ur"\g<1>" + LARYNGEAL + u"ː"}
                     #long laryngealized vowels
     re_bigraphs = {u"ch":u"č", u"lh":u"ɬ", u"nh":u"ŋʔ",
                    u"tz":u"c", u"uj":u"ʍ", #digraph consonants
@@ -101,7 +101,7 @@ def reverse_convert_file(in_file, stdout=False, out_file="./temp.txt"):
 def init_regex_defs():
     """Creates some global regex patterns required by other functions."""
     global LARYNGEAL, VOWELS
-    LARYNGEAL = ur"u\0330"
+    LARYNGEAL = ur"\u0330"
     VOWELS = u"([aeiouáéíóú])" #vowels with accents are stressed
 
 def check_requirements(args):
